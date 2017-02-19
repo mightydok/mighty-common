@@ -37,5 +37,5 @@ BSD
 Author Information
 ------------------
 
-Email: vitaliy.okulov@gmail.com
+Email: vitaliy.okulov@gmail.com   
 Web: htttp://vokulov.ru
