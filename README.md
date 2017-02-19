@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mightydok/mighty-common.svg?branch=master)](https://travis-ci.org/mightydok/mighty-common)
+
 Role Name
 =========
 
