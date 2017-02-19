@@ -21,4 +21,37 @@
       - p7zip-rar
       - pwgen
   tags:
-      - mighty-common
+      - mightydok-common
+
+- name: Set timezone to Europe/Moscow
+  timezone: name="Europe/Moscow"
+  tags:
+      - mightydok-common
+
+- name: Add deploy group
+  group: name=deploy
+  tags:
+      - mightydok-common
+
+- name: Add deploy user
+  user: name=deploy group=deploy createhome=yes shell=/bin/bash
+  tags:
+      - mightydok-common
+
+- name: Add sudoers for deploy user
+  template:
+    src: 10-deploy.j2
+    dest: /etc/sudoers.d/10-deploy
+    owner: root
+    group: root
+    mode: 0440
+  tags:
+      - mightydok-common
+
+- name: Add personal public ssh key file
+  authorized_key:
+    user: deploy
+    state: present
+    key: https://vokulov.ru/wp-content/uploads/publicsshkey
+  tags:
+      - mightydok-common
