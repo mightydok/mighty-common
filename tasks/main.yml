@@ -1,0 +1,24 @@
+---
+# tasks file for mighty-common
+- name: Install common packages for everyday use
+  apt: pkg={{ item }} install_recommends=yes state=latest cache_valid_time=3600 update_cache=yes
+  with_items:
+      - screen
+      - sudo
+      - arping
+      - tshark
+      - mc
+      - unzip
+      - vim
+      - logwatch
+      - logrotate
+      - bzip2
+      - fail2ban
+      - iptables
+      - iptables-persistent
+      - p7zip
+      - p7zip-full
+      - p7zip-rar
+      - pwgen
+  tags:
+      - mighty-common
